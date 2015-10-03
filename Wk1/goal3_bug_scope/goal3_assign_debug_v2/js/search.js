@@ -1,3 +1,6 @@
+/// Fred Lewis October 2 2015 Debug Assignment /////
+
+
 // Create privatized scope using a self-executing function
 (function(){
 	
