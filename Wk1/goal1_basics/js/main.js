@@ -52,28 +52,35 @@
 console.log('------ variables ----------');
 
     //example 1: variables defined properly
+   // var name ="james", course="PWA1", month = 3;
 
 
     //example 2: variables not defined will = "undefined"
-
-
+    //var name, course, month;
+    //console.log ("name:", name + "/course:", course + "/month", month);
     //example 3: a mix of variables defined and not defined
-
-
+    //var name, course= "pwa1", month;
+    //console.log ("name:", name + "/course:", course + "/month", month);
     //example 4: declaring multiple variables at once w/ same value
-
+    //var a=b=c=d=10;
 
 
 // string (definition, concatenation, escape character)
 console.log('------ strings ----------');
 
     //basic string
-
+    //var name="James Bond";
+   // console.log(name);
+    //var testString= "He's in PAW1";
+   // console.log("Example 1: ", testString);
 
     //string w/ escape characters " \ "
-
+    var testString= "I need some \"quotes\" to be here ";
+    console.log("Example 1: ", testString);
 
     //string w/ escape characters and mixed single/double quotes
+    var testString= 'he\'s in ' + '"PAW1"';
+    console.log("Example 5: ", testString);
 
 
     //this example shows that all the "phase" vars above were overwritten
@@ -87,22 +94,35 @@ console.log('------ numbers ----------');
 
 
     //basic math
-
+    var counter= 10;
+    console.log("Basic math:", counter + 1);
 
     //quick operations with "assignment operator" +=, -=, *=, /=, %=
     //one example below, can show more examples with other assignment operators
-
+    var num1= 10;
+    var num2=5;
+    num1 += num2;
+    console.log("+=:", num1);
 
     //increment or decrement numbers by 1 with ++ or --
+    var myNum= 5;
+    console.log("myNum=", myNum);
 
+    myNum++;
+    console.log("myNum=", myNum);
+
+    myNum--;
+    console.log("myNum=", myNum);
     //this decrements right before it is being used
-
+    var num = 10;
+    --num;
+    console.log("num=", num);
     //this decrements after it is used
 
     //comment out the above example
     //this decrements after it is being used as well
 
-
+    console.log();
     //add a number to a string is always a string
 
 
@@ -140,7 +160,7 @@ console.log('------ arrays ----------');
  */
 
     //arrays can hold any data type
-
+    console.log("Index 0", myArr[0]);
 
 
  /*******************************************
@@ -248,7 +268,13 @@ console.log('------ conditionals ----------');
 
  ================================================================
  */
-
+    if ("a"<"b") {
+        //true: run code
+        console.log("a is less than b");
+    }else{
+        //False:run code
+        console.log("if-else: teh 'IF' ");
+    }
 
 
     //if - else if - else (allows for multiple options)
@@ -299,8 +325,13 @@ console.log('------ conditionals ----------');
  GOAL
     1. learn if - else
  ********************************************/
-
-
+    var weather= "Cloudy";
+    if (weather=== "Sunny"){
+        bobsMood= "Happy";
+    }else {
+        bobsMood="Sad";
+    }
+    console.log("If-Else weather: " , bobsMood);
 
 
 /*******************************************
@@ -318,6 +349,24 @@ console.log('------ conditionals ----------');
         - else bobsMood = "sad"
     3.  console.log the results after each conditional
  ********************************************/
+    var waves= 10;
+    var weather= "Sunny";
+
+    if (weather=== "Sunny") {
+        if (waves = 10) {
+            bobsMood = "PUMPED";
+        } else if ((waves <= 9) && (waves >= 5)) {
+            bobsMood = "Mellow";
+        } else {
+            bobsMood = "Bummed";
+        }
+
+    }else if (weather === "Overcast"){
+        if (( waves< 10) && (waves >=3)){
+            bobsMood = "Totally Bummed";
+        }
+    }
+    console.log("If-Else weather: " , bobsMood);
 
 
 
