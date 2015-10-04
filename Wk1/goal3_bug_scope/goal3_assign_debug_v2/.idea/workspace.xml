@@ -44,21 +44,11 @@
       <file leaf-file-name="search.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/search.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.057692308">
-              <caret line="83" column="70" selection-start-line="83" selection-start-column="70" selection-end-line="83" selection-end-column="70" />
+            <state vertical-scroll-proportion="3.8141026">
+              <caret line="107" column="81" selection-start-line="107" selection-start-column="81" selection-end-line="107" selection-end-column="81" />
               <folding>
-                <marker date="1443913137000" expanded="true" signature="4105:4120" placeholder="..." />
+                <marker date="1443919368000" expanded="true" signature="4105:4120" placeholder="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PWA1_1509_Lewis_Fred_wk1.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../goal1_basics/Assignment Duel/PWA1_1509_Lewis_Fred_wk1.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="122" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="122" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -152,7 +142,12 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="FullScreen" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../goal1_basics/Assignment Duel/PWA1_1509_Lewis_Fred_wk1.js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../../../.." />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -261,12 +256,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../Lewis_Fred_PWA1_1509.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1443919368000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/search.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.057692308">
-          <caret line="83" column="70" selection-start-line="83" selection-start-column="70" selection-end-line="83" selection-end-column="70" />
+        <state vertical-scroll-proportion="3.8141026">
+          <caret line="107" column="81" selection-start-line="107" selection-start-column="81" selection-end-line="107" selection-end-column="81" />
           <folding>
-            <marker date="1443913137000" expanded="true" signature="4105:4120" placeholder="..." />
+            <marker date="1443919368000" expanded="true" signature="4105:4120" placeholder="..." />
           </folding>
         </state>
       </provider>
