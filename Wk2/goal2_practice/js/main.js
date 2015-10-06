@@ -7,7 +7,6 @@
 
 // scope wrapper (self executing function)
 (function(){
-	
 /* 
 	===============================================
 	RESEARCHING
@@ -314,7 +313,8 @@ var arr3 = ['apple', 'orange', 50393, 7.324];
 
 console.log('------ MORE Operators - typeof() ----------');
 
-
+	console.log(typeof true);
+	console.log(typeof [1,2,3,4,]);
 /*
 	===============================================
 	MORE:  Conditionals (switch())
@@ -348,7 +348,19 @@ console.log('------ MORE Conditionals - Switch ----------');
 			if age 18 then console.log "adult"
 			if no age then console.log "No answer"
 ********************************************/
+	var age = 18;
 
+	switch(age){
+		case 13:
+			console.log("Child");
+			break;
+		case 18:
+			console.log("Adult");
+			break;
+		default:
+			console.log("No Answer");
+			break;
+	}
 
 
 /*
