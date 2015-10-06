@@ -277,11 +277,18 @@ var arr3 = ['apple', 'orange', 50393, 7.324];
 
 // splice()
 // Adds and/or removes elements from an array.
-
+	console.log(arr1);
+	console.log(arr1.splice(4,2));
+	console.log(arr1);
 
 // forEach()
 // Calls a function for each element in the array.
-
+	console.log(arr1);
+	arr1.forEach(function(element,index,array){
+		console.log("element",element);
+		console.log("index",index);
+		console.log("array",array);
+	});
 
 
 
@@ -306,7 +313,19 @@ var arr3 = ['apple', 'orange', 50393, 7.324];
     var secondHalfYr = ["Jul", "Aug", "Sept", "Oct", "Nov", "Dec"];
     var combined;
 
+	var combined= firstQtr.concat(secondQtr);
+	console.log("Concat 2 array!",combined);
 
+	var combined= firstQtr.concat(secondQtr, secondHalfYr);
+	console.log("Concat 3 arrays!",combined);
+
+	console.log("Joined Arrays!!", combined.join());
+
+	console.log("Took out-", combined.pop());
+	console.log("Show Array", combined);
+
+	var results = secondHalfYr.slice(2,4);
+	console.log("slice:", results);
 /*
 	===============================================
 	MORE:  Operators (typeof())
@@ -428,7 +447,12 @@ console.log('------ MORE Functions ----------');
 			}			
 */
 console.log('------ While / Loop ----------');
+	var numberOfBeers= 10;
 
+	while(numberOfBeers> 0){
+		console.log(numberOfBeers + "kegs on the wall.");
+		numberOfBeers--;
+	}
 	
 /*
 	===============================================
@@ -454,7 +478,9 @@ console.log('------ While / Loop ----------');
 
 console.log('------For Loop ----------');
 
-
+    for (var beers=10; beers > 0; beers --){
+        console.log(beers + " bottles of beer on the wall");
+    }
 	/* 
 		array.Length
 	
@@ -466,7 +492,17 @@ console.log('------For Loop ----------');
 		- in the example below, the last index of the array would be 4 
 			- the  .length property returns the count, which would be 5	
 	*/	
+    var myNums = [1,2,3,4,5];
+    console.log("length", myNums.length);
 
+    for (var i= 0, j=myNums.length;i<j;i++){
+        if (i===3){
+            console.log("testing out the break and it broke");
+            break;
+        }
+
+        console.log(myNums[i]);
+    }
 
 	/* 
 		using the for() loop with .length
@@ -518,6 +554,15 @@ console.log('------For Loop ----------');
 		b.  create a for loop using the faster method (4 parameters)
 			- in the loop just console.log the values
 ********************************************/
+    var cartoonDudes=[
+    "superman",
+    "Batman",
+    "Wolverine",
+    "Iceman"
+    ];
+        for(var i= 0, j=cartoonDudes.length; i<j; i++){
+            console.log(cartoonDudes[i]);
+        }
 
 
 
