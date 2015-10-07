@@ -122,7 +122,7 @@ console.log('------ Debugging ----------');
 		console.log("nested conditional: 1st IF returned false");
 	}());
 
-/*
+
  //Example4:
 	var value1 = 'Sunny';
 	var value2 = 10;
@@ -157,7 +157,7 @@ console.log('------ Debugging ----------');
 	var moodType = mood(value1, value2);
 	console.log('mood: ', moodType);
 
-
+/*
     //Example5:
 
     var myNums = [1, 2, 3, 4, 5];
