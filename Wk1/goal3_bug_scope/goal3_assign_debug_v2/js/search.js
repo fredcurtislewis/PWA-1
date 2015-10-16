@@ -11,30 +11,32 @@
 	;    // a variable of currentSearch with no value
 	
 	// Validates search query
-	var validqte == function(query){        // this line sets the variable validate )spellt incorrectly I assume) with == (equalling) a function with a parameter of query
+	var validate = function(query){        // this line sets the variable validate )spellt incorrectly I assume) with == (equalling) a function with a parameter of query
 		
 		// Trim whitespace from start and end of search query
-		while(query.charAt(0) = " "){    // this is saying that the first space is blank, moving the cursor and first thing typed over, creating whitespace........charAt returns the first character of a string
+		while(query.charAt(0) == " "){    // this is saying that the first space is blank, moving the cursor and first thing typed over, creating whitespace........charAt returns the first character of a string
 			query = query.substring(1, query.length);  //...query will equal the first character of the string and the number of characters in the string
-		};
-		while(query.charAt(query.length-1) === ""){
-			query = query.substring(0, query.length-1);
-		;  // this states that there that there will be whitespace at the end of the box as well
+		}
+		while(query.charAt(query.length-1) === "") {
+            query = query.substring(0, query.length - 1);
+        }  // this states that there that there will be whitespace at the end of the box as well
 		
 		// Check search length, must have 3 characters
 		if(query.length < 3){
-			alert("Your search query is too small, try again.);
+			alert("Your search query is too small, try again.");
 			// This says if the length of the value input is less than three, show the alert "Your search query is too small, try again.
 			// (DO NOT FIX THE LINE DIRECTLY BELOW)
 			searchInput.focus();   // this gives focus to the variable
 			return;                // this return statement should be returning something, but its alone?
-		};
+		}
 		
 		search(query);
 	};
 	
 	// Finds search matches
-	var search = function(query)     // establishes that var search is the query function
+	var search = function(query){
+
+	// establishes that var search is the query function
 		
 		// split the user's search query string into an array
 		var queryArray = query.join(" ");
@@ -43,27 +45,29 @@
 		var results = [];
 
 		// loop through each index of db array
-		for(var i=0, j=db.length; i<j; i++){   // this says the value and length and to count up by one each time
-		
-			// each db[i] is a single video item, each title ends with a pipe "|"
-			// save a lowercase variable of the video title
-			var dbTitleEnd = db[i].indexOf('|'); // it will search the string for '|'
-			var dbitem = db[i].tolowercase().substring(0, dbTitleEnd);
-			// this says to convert the string to lowercase and extract both the 0 position and variable dbTitleEnd's value
-			// loop through the user's search query words
-			// save a lowercase variable of the search keyword
-			for(var ii=0, jj=queryArray.length; ii<jj; ii++){
-				var qitem = queryArray[ii].tolowercase();  // this says to send the query lowercased and to count up one each time
-				
-				// is the keyword anywhere in the video title?
-				// If a match is found, push full db[i] into results array
-				var compare = dbitem.indexOf(qitem); // this establishes that var compare is equal to dbitem (searching for an index of qitem)
-				if(compare !== -1){   // if compare is not equal to in number or type -1
-					results.push(db[i]);
-				};                   // push results to the db info area
-			;
-		;
-		
+		for(var i=0, j=db.length; i<j; i++) {   // this says the value and length and to count up by one each time
+
+            // each db[i] is a single video item, each title ends with a pipe "|"
+            // save a lowercase variable of the video title
+            var dbTitleEnd = db[i].indexOf('|'); // it will search the string for '|'
+            var dbitem = db[i].toLowerCase().substring(0, dbTitleEnd);
+            // this says to convert the string to lowercase and extract both the 0 position and variable dbTitleEnd's value
+            // loop through the user's search query words
+            // save a lowercase variable of the search keyword
+            for (var ii = 0, jj = queryArray.length; ii < jj; ii++) {
+                var qitem = queryArray[ii].toLowerCase();  // this says to send the query lowercased and to count up one each time
+
+                // is the keyword anywhere in the video title?
+                // If a match is found, push full db[i] into results array
+                var compare = dbitem.indexOf(qitem); // this establishes that var compare is equal to dbitem (searching for an index of qitem)
+                if (compare !== -1) {   // if compare is not equal to in number or type -1
+                    results.push(db[i]);
+                }
+                                  // push results to the db info area
+
+            }
+
+        }
 		results.sort();  // sort the results of var results
 		
 		// Check that matches were found, and run output functions
@@ -71,7 +75,7 @@
 			noMatch(); // if the length is not long enough noMatch..
 		}else{
 			showMatches(results);  // if its long enough showMatches
-		};
+		}
 	};
 	
 	// Put "No Results" message into page (DO NOT FIX THE HTML VAR NOR THE innerHTML)
@@ -106,19 +110,19 @@
 			
 			// make the video link - THE NEXT LINE IS CORRECT.
 			html += '<p><a href=' + url + '>' + title + '</a></p>'; // video link
-		};
+		}
 		resultsDIV.innerHTML = html; //THIS LINE IS CORRECT.
 	};
 	
 	// The onsubmit event will be reviewed in upcoming Course Material.
 	// THE LINE DIRECTLY BELOW IS CORRECT
-	document.forms[0].onsubmit = function(){
-		var query = searchInput.value;
-		validqte(query);
+	document.forms[0].onsubmit = function() {
+        var query = searchInput.value;
+        validqte(query);
 
         // return false is needed for most events - this will be reviewed in upcoming course material
         // THE LINE DIRECTLY BELOW IS CORRECT
-		return false;
-	;
+        return false;
+    }
 
 })();
