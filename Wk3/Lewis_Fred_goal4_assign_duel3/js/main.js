@@ -3,72 +3,79 @@
 
 
 // self-executing function
-(function(){       // this is the javascript way to call a particular task or function
+(function() {
+    console.log("Fight!!!");
 
-    console.log("FIGHT!!!");   // this sends a statement to the console
+    var fighter1 = document.querySelector("#kabal").querySelector("p");        //This establishes that the text will go in the paragraph
+    var fighter2 = document.querySelector("#kratos").querySelector("p");
+    var fightButton = document.getElementById("fight_btn");                    //The function button is represented by var fightButton
+    var roundNum = document.querySelector("h4");                               //h4 is where the round number will be posted
 
-    //player name
-    var fighter1 = ["Spiderman", 20, 100];       // establishing a variable of fighter1 given the array value of Spiderman, 20, 100
-    var fighter2 = ["Batman", 20, 100];          // establishing a variable of fighter2 given the array value of Batman, 20, 100
-    fighter1 = {name:Spiderman, damage:20, health:100};
-    fighter2 = {name:Batman, damage:20, health:100};
-    //initiate round
-    var round=0;                       // establishing a variable of round given the number value of 0
+    console.log();
 
-    function fight(){                  // this is the javascript way to call a particular task or function
+    fightButton.addEventListener("click", fight, false);                       //Creates an event when the button is clicked and returns it
 
-     //   alert(fighter1 [0] + ":" + fighter1 [2] + " " +  "*START*" + " " + fighter2[0] + ":" + fighter2 [2]);   // alert box that says Spiderman:100 *START* Batman:100
+    var fighters = [                                                           // This combines the fighters in one var
+        {name: "Kabal", damage: 20, health: 100},
+        {name: "Kratos", damage: 20, health: 100}
+    ];
 
-        console.log(fighter1 [0] + ":" + fighter1 [2] + " " + "*START*" + " " + fighter2[0] + ":" + fighter2 [2]); // console.log i created to test the alert
+    var round = 1;                                                             // You always start in Round 1
 
+    roundNum.innerHTML = "Click here to begin";                                //This is what displays above the fight button
+    fighter1.innerHTML = fighters[0].name + ":" + " " + fighters[0].health;    //Kabal : 100 and so on ..
+    fighter2.innerHTML = fighters[1].name + ":" + " " + fighters[1].health;    //Kratos : 100 and so on ..
 
-        for (var i = 0; i < 10; i++)  //  This sets a loop with  "for"; Statement 1 sets a variable before the loop starts (var i = 0), Statement 2 defines the condition for the loop to run (i must be less than 10), Statement 3 increases a value (i++) each time the code block in the loop has been executed.
-        {
-            //random formula is - Math.floor(Math.random() * (max - min) + min);
-            var minDamage1 = fighter1 [1] * .5; // establishing a variable of minDamage1 which is equal to var fighter1 [1] multiplied by .5
-            var minDamage2 = fighter2 [1] * .5; // establishing a variable of minDamage2 which is equal to var fighter2 [1] multiplied by .5
+    function fight() {                                                         //Establishes a function of fight
 
-            var f1 = Math.floor(Math.random()*(fighter1 [1]-minDamage1) + minDamage1);                        // Math.floor() rounds a number down to its nearest integer while the Math.random returns a random number from 0 (inclusive) up to but not including 1 (exclusive). This line established a variable of f1 which is equal to a random number rounded down to the nearest integer multiplied by ( the value of player1Damage (20) minus the value of minDamage1 (which is 20 *.5) plus minDamage, this action produces a random number for var f1
+        fighter1.innerHTML = fighters[0].name + ":" + " " + fighters[0].health; // Establishes the first round
+        fighter2.innerHTML = fighters[1].name + ":" + " " + fighters[1].health;
 
-            var f2 = Math.floor(Math.random()*(fighter2 [1]-minDamage2)+ minDamage2);                     // This does the same with var f2 as with var f1 above
+        var f1 = Math.floor(Math.random() * fighters[0].damage +                // This is the same formula from before to make a random amount of damage
+            fighters[0].damage * .5);
+        var f2 = Math.floor(Math.random() * fighters[1].damage +
+            fighters[1].damage * .5);
 
-            //inflict damage
-            fighter1 [2]-=f1;  //This establishes that the value of var fighter1 [2] is the prior value minus var f1
-            fighter2 [2]-=f2;  // This establishes the same for fighter2 [2] as above
+        fighters[0].health -= f1;                                               //Gives the updated health after damage has been applied
+        fighters[1].health -= f2;
+        console.log(fighters[0].health, fighters[1].health);                    //Sends the score to the console
 
-            console.log(fighter1 [0]+ ":" + fighter1 [2] + " " + fighter2 [0] + ":" + fighter2 [2]);  // This produces a statement on the console that reads the value of fighter1 [0] of Spiderman and the updated value of fighter1 [2] followed by the same info for fighter2 [0] or Batman; example "Spiderman:60 Batman:60"
+        var result = winnerCheck();
+        console.log(result);
+        roundNum.innerHTML = "      Round # " + round + "      Results:";       // Displays which round it is and results
+        round++;                                                                // Advances the round one each time the button is pushed
 
-            //check for victor
-            var result = winnerCheck();  // this is setting up for below with function winnerCheck
-            console.log(result);       // once the below code is processed the value of var result will be displayed here
-            if (result==="no winner")   // if that result is "no winner"
-            {
-                round++;      // the round number will have one added to its value each time
-               // alert(fighter1 [0] + ":" + fighter1 [2] + "  *ROUND " + round +" OVER" +"*  "+ fighter2 [0] +":"+ fighter2 [2]);   // and the alert "Spiderman:xx  *ROUND xx OVER*  Batman:xx" will display as an alert
+        if (result === "no winner") {
+            fighter1.innerHTML = fighters[0].name + ":" + " " + fighters[       //When there is not a winner the fighters name and their health score will be displayed
+                    0].health;
+            fighter2.innerHTML = fighters[1].name + ":" + " " + fighters[
+                    1].health;
 
-            } else{     // if the value of var result is not "no winner"
-               // alert(result);  // the value of var result will be alerted
-                break;         // and this break in the loop will occur
-            };
+        }
+        else {
+            fighter1.innerHTML = result;                                        //This section changes the button function from active to inactive and changes the text to "Defeat!!"
 
-          };
-    };
+            fightButton.removeEventListener("click", fight, false);
+            document.querySelector('.buttonblue').innerHTML = 'Defeat!!';
+        }
+    }
 
-    function winnerCheck(){     // once the value of var result does not equal "no winner" this function occurs
-        var result="no winner";   // this establishes the value of var result
-        if (fighter1 [2]<1 && fighter2 [2]<1)  // if fighter1 [2] AND fighter2 [2] are BOTH less than 1 then the loop will stop
-        {
-            result = "You Both Die";  // and the value of var result will be......"You Both Die"
-        } else if(fighter1 [2]<1){   // if this does not occur, but fighter1 [2] only drops below 1
-            result =fighter2 [0] +" WINS!!!"    // then the value of var result will be that playerTwoName WINS!!!
-        } else if (fighter2 [2]<1)    // // if this does not occur, but fighter2 [2] only drops below 1
-        {
-            result = fighter1 [0] +" WINS!!!"    //then the value of var result will be that fighter1 [0] WINS!!!
-        };
-       return result;  // this returns the result variables value to the console
-    };
+    function winnerCheck() {                                                    //Function to check for a winner
+        var result = "no winner";
 
-    /*******  The program gets started below *******/
-    fight();
+        if (fighters[0].health < 1 && fighters[1].health < 1) {                 //if both dead and  if both <1
+            result = "Your Both Dead - Good luck in the next life!";            //Your Both Dead- Good Luck in the Next Life
+
+        }
+        else if (fighters[0].health < 1) {                                      //If Kabal goes below 0 Kratos wins
+            result = fighters[1].name + " WINS!!";
+
+        }
+        else if (fighters[1].health < 1) {                                      //If Kratos goes below 0 Kabal wins
+            result = fighters[0].name + " WINS!!"
+        }
+
+        return result;
+    }
 
 })();
